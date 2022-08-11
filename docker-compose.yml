@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  node:
+    build:
+      context: ./
+      dockerfile: ./.docker/node/Dockerfile
+    tty: true
+    volumes:
+      - ./src:/usr/src/app
+    environment:
+      - WATCHPACK_POLLING=true
+    ports:
+      - "3000:3000"
